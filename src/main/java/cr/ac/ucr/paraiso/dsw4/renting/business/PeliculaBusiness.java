@@ -1,6 +1,7 @@
 package cr.ac.ucr.paraiso.dsw4.renting.business;
 
 import java.sql.DataTruncation;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -19,6 +20,12 @@ public class PeliculaBusiness {
     public List<Pelicula> findMoviesByTitleOrGenre(String title, String genre){
         return peliculaData.findMovieByTitleOrGenre(title, genre);
     }
+
+     public Pelicula save(Pelicula pelicula) throws SQLException{
+        peliculaData.save(pelicula);
+        return pelicula;
+    }
+
     
 
 }
